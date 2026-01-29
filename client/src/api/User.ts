@@ -45,7 +45,7 @@ export function registerUser(username: string, email: string, password: string):
 }
 
 export function logoutUser(): Promise<void> {
-    return fetch(`${API_BASE_URL}/logout`, {
+    return fetch(`${API_BASE_URL}/api/logout`, {
         method: 'POST',
         credentials: 'include',
         headers: {

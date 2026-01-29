@@ -1,0 +1,58 @@
+.user-view {
+  position: fixed;
+  top: 4px;
+  left: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--primary);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.user-view__name {
+  font-size: 14px;
+  white-space: pre-wrap;
+  font-weight: 600;
+  color: white;
+}
+
+.user-view__email {
+  font-size: 14px;
+  white-space: pre-wrap;
+  font-weight: 600;
+  color: white;
+}
+
+.user-view__logout {
+  padding: 5px 10px;
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-view__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  color: var(--primary);
+  border-radius: 50%;
+  font-weight: 600;
+  background-color: white;
+}
+
+.error-message {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #fff5f5;
+  color: #e53e3e;
+  border: 1px solid #fed7d7;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+}

@@ -1,0 +1,8 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url("./assets/note.svg") space;
+  background-size: 24px;
+  color: var(--text-primary);
+}

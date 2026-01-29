@@ -40,9 +40,15 @@ export function authorizeResponse(
 ): Response {
   return response.cookie('auth', createToken(userId), {
     httpOnly: true,
+    sameSite: 'none',
+    secure: true,
   });
 }
 
 export function unauthorizeResponse(response: Response): Response {
-  return response.clearCookie('auth');
+  return response.clearCookie('auth', {
+    httpOnly: true,
+    sameSite: 'none',
+    secure: true,
+  });
 }

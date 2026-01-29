@@ -1,13 +1,21 @@
 .note-view {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--border-accent);
-  border-radius: 8px;
-  padding: 16px 24px;
-  gap: 24px;
+  border: 2px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 20px 24px;
+  gap: 16px;
   box-sizing: border-box;
   cursor: pointer;
   overflow: hidden;
+  transition: all 0.2s ease;
+  background: #fafafa;
+}
+
+.note-view:hover {
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -31,8 +39,9 @@
 
 .note-view__text {
   font-size: 16px;
-  line-height: 18px;
+  line-height: 22px;
   white-space: pre-wrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }

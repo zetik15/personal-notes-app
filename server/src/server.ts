@@ -19,8 +19,8 @@ server.use(json(), cookieParser(), cors({
   credentials: true
 }), sleep([400, 1500]));
 
-server.use('/users', usersRouter);
+server.use('/api/users', usersRouter);
 
-server.use('/notes', notesRouter);
+server.use('/api/notes', notesRouter);
 
-server.use('/', authRouter);
+server.use('/api', authRouter);

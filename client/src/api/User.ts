@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { validResp } from './validResp';
 import { queryClient } from './QueryClient';
+import { API_BASE_URL } from '../config';
 
 export const UserAuthSchema = z.object({
     username: z.string().min(5, 'Имя пользователя не может быть менее 5 символов'),
@@ -18,7 +19,7 @@ export const UserSchema = z.object({
 export type User = z.infer<typeof UserSchema>;
 
 export function loginUser(email: string, password: string): Promise<void> {
-    return fetch('/api/login', {
+    return fetch(`${API_BASE_URL}/api/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -31,7 +32,7 @@ export function loginUser(email: string, password: string): Promise<void> {
 }
 
 export function registerUser(username: string, email: string, password: string): Promise<void> {
-    return fetch('/api/register', {
+    return fetch(`${API_BASE_URL}/api/register`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -44,7 +45,7 @@ export function registerUser(username: string, email: string, password: string):
 }
 
 export function logoutUser(): Promise<void> {
-    return fetch('/logout', {
+    return fetch(`${API_BASE_URL}/logout`, {
         method: 'POST',
         credentials: 'include',
         headers: {
@@ -57,7 +58,7 @@ export function logoutUser(): Promise<void> {
 }
 
 export function fetchMe(): Promise<User> {
-    return fetch('/api/users/me', {
+    return fetch(`${API_BASE_URL}/api/users/me`, {
         credentials: 'include'
     })
     .then(validResp)

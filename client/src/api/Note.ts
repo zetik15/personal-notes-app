@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { validResp } from './validResp';
 import { useQuery } from '@tanstack/react-query';
+import { API_BASE_URL } from '../config';
 
 export const NoteSchema = z.object({
     id: z.string(),
@@ -23,7 +24,7 @@ export const FetchNoteListSchema = z.object({
 export type FetchNoteListResponse = z.infer<typeof FetchNoteListSchema>;
 
 export function fetchNoteList(): Promise<FetchNoteListResponse> {
-    return fetch('/api/notes', {
+    return fetch(`${API_BASE_URL}/api/notes`, {
         credentials: 'include'
     })
     .then(response => response.json())
@@ -35,7 +36,7 @@ export function fetchNoteList(): Promise<FetchNoteListResponse> {
 }
 
 export function createNote(title: string, text: string): Promise<Response> {
-    return fetch('/api/notes', {
+    return fetch(`${API_BASE_URL}/api/notes`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

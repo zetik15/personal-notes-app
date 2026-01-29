@@ -24,7 +24,6 @@ export const LoginForm = () => {
     onSuccess: async () => {
       setErrors({});
       await queryClient.invalidateQueries({ queryKey: ['users', 'me'] });
-      window.location.href = '/';
     },
   }, queryClient);
 

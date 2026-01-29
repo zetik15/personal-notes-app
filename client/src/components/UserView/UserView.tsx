@@ -23,7 +23,6 @@ export const UserView: FC<UserViewProps> = ({ user }) => {
     try {
       await logoutUser();
       queryClient.clear();
-      window.location.href = '/login';
     } catch (error) {
       const errorMessage = error instanceof Error
       ? error.message

@@ -52,9 +52,10 @@ export function logoutUser(): Promise<void> {
             'Content-Type': 'application/json'
         }
     })
+    .then(validResp)
     .then(() => {
         queryClient.clear();
-        window.location.reload();
+        queryClient.invalidateQueries({ queryKey: ['users', 'me'] });
     })
 }
 

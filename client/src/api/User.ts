@@ -53,6 +53,7 @@ export function logoutUser(): Promise<void> {
         }
     })
     .then(() => {
+        queryClient.clear();
         window.location.href = '/';
     })
 }

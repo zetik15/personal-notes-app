@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query"
-import { queryClient } from "../api/QueryClient"
 import { fetchMe } from "../api/User"
 import { AuthForm } from "../components/AuthForm"
 import { Loader } from "../components/Loader"
@@ -13,7 +12,7 @@ export const Account = () => {
         queryFn: () => fetchMe(),
         queryKey: ['users', 'me'],
         retry: false,
-    }, queryClient)
+    })
 
     switch(meQuery.status) {
         case 'pending':

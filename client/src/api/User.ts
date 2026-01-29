@@ -53,7 +53,8 @@ export function logoutUser(): Promise<void> {
         }
     })
     .then(() => {
-        queryClient.invalidateQueries({ queryKey: ['users', 'me'] });
+        queryClient.clear();
+        window.location.reload();
     })
 }
 

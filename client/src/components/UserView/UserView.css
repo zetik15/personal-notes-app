@@ -1,13 +1,20 @@
 .user-view {
   position: fixed;
-  top: 4px;
-  left: 4px;
+  top: 16px;
+  left: 16px;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 12px;
   background-color: var(--primary);
-  padding: 8px;
-  border-radius: 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-view:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .user-view__name {
@@ -25,25 +32,37 @@
 }
 
 .user-view__logout {
-  padding: 5px 10px;
+  padding: 8px 16px;
   background: #ff4d4f;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.user-view__logout:hover {
+  background: #ff3333;
+  transform: scale(1.05);
+}
+
+.user-view__logout:active {
+  transform: scale(0.98);
 }
 
 .user-view__logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  font-size: 12px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
   color: var(--primary);
   border-radius: 50%;
-  font-weight: 600;
+  font-weight: 700;
   background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .error-message {

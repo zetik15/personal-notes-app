@@ -5,6 +5,7 @@ import { AuthForm } from "../components/AuthForm"
 import { Loader } from "../components/Loader"
 import { NoteForm } from "../components/NoteForm"
 import { FetchNotesListView } from "../components/NotesListView/FetchNotesListView"
+import { UserView } from "../components/UserView"
 
 
 export const Account = () => {
@@ -21,10 +22,13 @@ export const Account = () => {
             return <AuthForm />
         case 'success':
             return (
-                <div className="notes-app">
-                    <NoteForm />
-                    <FetchNotesListView />
-                </div>
+                <>
+                    <UserView user={meQuery.data} />
+                    <div className="notes-app">
+                        <NoteForm />
+                        <FetchNotesListView />
+                    </div>
+                </>
             )
     }
 }

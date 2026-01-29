@@ -52,10 +52,8 @@ export function logoutUser(): Promise<void> {
             'Content-Type': 'application/json'
         }
     })
-    .then(validResp)
     .then(() => {
-        queryClient.clear();
-        queryClient.invalidateQueries({ queryKey: ['users', 'me'] });
+        window.location.href = '/';
     })
 }
 
